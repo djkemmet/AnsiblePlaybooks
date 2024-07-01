@@ -16,6 +16,6 @@
   - name: Ensure Server is Under Management
     ansible.builtin.lineinfile:
       path: /policy.csv
-      line: "policy-baseline,policy-firewall-sealed"
+      line: "policy_name,\npolicy-config-baseline,\npolicy-firewall-sealed"
       create: yes
     when: policy_stat_result.stat.islnk is not defined

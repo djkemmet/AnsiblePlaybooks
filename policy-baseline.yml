@@ -1,0 +1,5 @@
+---
+- tasks:
+  - name: Write a debug message
+    debug:
+      msg: "Hello, this is a debug message!"

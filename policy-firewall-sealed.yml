@@ -1,0 +1,8 @@
+---
+- name: POLICY - SEAL FIREWALL
+  hosts: all
+  become: true
+  tasks:
+  - name: Print Debug Message.
+    ansible.builtin.debug:
+      msg: "IT WORKS!"
