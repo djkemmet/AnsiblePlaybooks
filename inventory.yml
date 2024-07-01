@@ -1,0 +1,21 @@
+ungrouped:
+  hosts:
+    10.211.55.[4:7]
+  vars:
+    ansible_user: vmadmin
+    ansible_password: Gl0rp@zon92!
+    ansible_become_password: Gl0rp@zon92!
+# lab_servers:
+#   hosts:
+#     10.211.56.[2:10]
+#   vars:
+#     ansible_user: vmadmin
+#     ansible_password: Gl0rp@zon92!
+#     ansible_become_password: Gl0rp@zon92!
+# prod_servers:
+#   hosts:
+#     10.211.56.[2:10]
+#   vars:
+#     ansible_user: vmadmin
+#     ansible_password: Gl0rp@zon92!
+#     ansible_become_password: Gl0rp@zon92!

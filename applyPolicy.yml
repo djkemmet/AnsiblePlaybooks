@@ -1,0 +1,12 @@
+---
+- name: Apply System Confiuration Policy
+  become: true
+  hosts: all
+  tasks: 
+    - name: Parse System Configuration Policies Applied to Server
+      community.general.read_csv:
+        path: /policy.csv
+        key: 
+      register: policies
+
+    - name: Execute Policy Playbooks to reconfigure the VM 

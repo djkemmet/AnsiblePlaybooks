@@ -1,0 +1,12 @@
+---
+- name: Host Discovery Playbook
+  hosts: all
+  become: true
+  tasks: 
+  - name: Check for Existing System Policy Definition
+  - name: Ensure Server is Under Management
+    ansible.builtin.lineinfile:
+      path: /policy.csv
+      line: "policy`npolicy-baseline,policy-firewall-sealed"
+      create: yes
+      
