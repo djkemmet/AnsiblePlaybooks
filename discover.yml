@@ -4,9 +4,18 @@
   become: true
   tasks: 
   - name: Check for Existing System Policy Definition
+    ansible.builtin.stat:
+      path: /policy.csv
+    register: policy_stat_result
+
+  - name: Print Debug Message
+    ansible.builtin.debug:
+      msg: "The policy File Does Not Exist"
+    when: policy_stat_result.stat.islnk is not defined
+
   - name: Ensure Server is Under Management
     ansible.builtin.lineinfile:
       path: /policy.csv
-      line: "policy`npolicy-baseline,policy-firewall-sealed"
+      line: "policy-baseline,policy-firewall-sealed"
       create: yes
-      
+    when: policy_stat_result.stat.islnk is not defined
