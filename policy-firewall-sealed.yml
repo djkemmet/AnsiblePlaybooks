@@ -1,8 +1,8 @@
 ---
-- name: POLICY - SEAL FIREWALL
+- name: POLICY - FIREWALL, SEALED
   hosts: all
   become: true
   tasks:
-  - name: Print Debug Message.
-    ansible.builtin.debug:
-      msg: "IT WORKS!"
+    - name: Write a debug message
+      ansible.builtin.debug:
+        msg: "Hello, this is a debug message!"

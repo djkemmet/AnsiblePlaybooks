@@ -1,5 +1,8 @@
 ---
-- tasks:
-  - name: Write a debug message
-    debug:
-      msg: "Hello, this is a debug message!"
+- name: POLICY - Baseline Server
+  hosts: all
+  become: true
+  tasks:
+    - name: Write a debug message
+      ansible.builtin.debug:
+        msg: "Hello, this is a debug message!"
