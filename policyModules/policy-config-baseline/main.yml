@@ -24,6 +24,9 @@
   ansible.builtin.dnf: 
     name: cockpit
     state: present
+- name: Give Cockpit Install Time To Complete
+  ansible.builtin.pause:
+    minute: 1
 - name: Enable Cockpit Service
   ansible.builtin.systemd_service:
     name: cockpit.socket
