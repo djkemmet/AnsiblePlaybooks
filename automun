@@ -15,21 +15,21 @@ def cli():
 
 # CREATE COMMAND: Export a Policy Module Template
 @click.command("ExportPolicyTemplate")
-#@click.option('--ExportModuleTemplate',help="Provides Policy Module Template ready for use.")
-def export_policy_module_template():
+@click.argument("path")
+def export_policy_module_template(path):
     """
     Exports ready-to-build policy module template, with example syntax
     """
-    print("This is the Export Policy Function")
+    print(f"Importing your policy module from: {path}")
 
 # Import a Policy Module Template, Confirm
 @click.command("ImportPolicyModule")
-#@click.option('--ImportPolicyModule', help="Provides Policy Module Template ready for use.")
-def import_policy_module():
+@click.argument("path")
+def import_policy_module(path):
     """
     Imports Policy Module for application to managed systems.
     """
-    print("This command Imports a policy module")
+    print(f"Your Policy Module is at: {path}" )
 # Create Code to open these YML Files as objects.
 
 
