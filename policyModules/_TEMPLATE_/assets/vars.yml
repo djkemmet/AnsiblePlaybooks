@@ -1,0 +1,16 @@
+#
+# ansible_user: vmadmin
+# ansible_password: PASSWORDPASSWORDPASSWORD
+# ansible_become_password: PASSWORDPASSWORDPASSWORD
+#
+#
+# applications:
+#   SYBASE:
+#     app_port: 1234
+#     data_dir: /mnt/data/sybase
+#   APP2:
+#     app_user: Talkulox
+#     app_password: "Bl@hBl@HBLEGH!"
+#     app_port: 1234
+#     isActivated: true
+#

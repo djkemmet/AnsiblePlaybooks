@@ -1,0 +1,9 @@
+# - name: TASK ONE
+#   ansible.builtin.debug:
+#     msg: "Hello, THIS IS THE POLICY TO SEAL THE FIREWALL"
+# - name: TASK TWO
+#   ansible.builtin.debug:
+#     msg: "Hello, THIS IS THE POLICY TO SEAL THE FIREWALL"
+# - name: TASK THERE
+#   ansible.builtin.debug:
+#     msg: "Hello, THIS IS THE POLICY TO SEAL THE FIREWALL"

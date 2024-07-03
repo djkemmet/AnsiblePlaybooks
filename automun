@@ -5,6 +5,7 @@ Simplified Ansible Management Utility
 
 # Imports
 import click
+import os
 
 # Application Route
 @click.group()
@@ -15,12 +16,19 @@ def cli():
 
 # CREATE COMMAND: Export a Policy Module Template
 @click.command("ExportPolicyTemplate")
-@click.argument("path")
-def export_policy_module_template(path):
+@click.argument("name", nargs=1)
+@click.argument("path", nargs=1)
+def export_policy_module_template(path, name):
     """
     Exports ready-to-build policy module template, with example syntax
     """
-    print(f"Importing your policy module from: {path}")
+    print(f"Exporting your policy, {name} to path: {path}")
+    # Cache _TEMPLATE_ to /tmp
+    os.system(f"mkdir {path}/{name}")
+    os.system(f"cp -r ./policyModules/_TEMPLATE_/* {path}/{name}")
+    # Rename, {name}
+    # Place template in path.
+    print("Complete.")
 
 # Import a Policy Module Template, Confirm
 @click.command("ImportPolicyModule")
