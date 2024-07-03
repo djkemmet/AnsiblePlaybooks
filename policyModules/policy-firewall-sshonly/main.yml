@@ -1,0 +1,3 @@
+- name: Write a debug message
+  ansible.builtin.debug:
+    msg: "Hello, THIS IS THE POLICY TO SEAL THE FIREWALL"

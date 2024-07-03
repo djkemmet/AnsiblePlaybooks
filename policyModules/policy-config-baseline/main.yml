@@ -1,0 +1,25 @@
+- name: ADD GROUP host WITH GID 401
+  ansible.builtin.group:
+    name: host
+    state: present
+    gid: 401
+- name: DISALLOW ROOT LOGIN VIA SSH
+  ansible.builtin.lineinfile:
+    backup: true
+    path: /etc/ssh/sshd_config
+    regexp: "^PermitRootLogin"
+    line: "permitRootLogin no"
+- name: RESTRICT SSH TO host GROUP
+  ansible.builtin.lineinfile:
+    path: /etc/ssh/sshd_config
+    state: present
+    insertafter: "EOF"
+    line: "AllowGroups host"
+- name: ADD vmadmin TO host GROUP
+  ansible.builtin.user:
+    name: vmadmin
+    append: true
+    groups: host
+- name: RESTART SERVER TO CATCH CHANGES
+  ansible.builtin.reboot:
+

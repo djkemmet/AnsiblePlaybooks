@@ -1,6 +1,11 @@
 ungrouped:
   hosts:
-    10.211.55.[4:7]
+    RHEL-CLIENT01:
+      ansible_host: 192.168.160.51
+    RHEL-CLIENT02:
+      ansible_host: 192.168.160.187
+    RHEL-CLIENT03:
+      ansible_host: 192.168.160.77
   vars:
     ansible_user: vmadmin
     ansible_password: Gl0rp@zon92!

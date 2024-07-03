@@ -3,22 +3,20 @@
   hosts: all
   become: true
   tasks: 
-  - name: Parse System Configuration Policies Applied to Server
+
+  - name: Parse System Configuration Policy Document Applied to Server
     community.general.read_csv:
       path: /policy.csv
       delimiter: ','
     register: policies
-
+  
   - name: Debug Message, Find path to Policy Name
     ansible.builtin.debug:
       msg: '{{ item.policy_name }}.yml'
     loop: "{{ policies.list}}"
     register: debug_output
 
-  - name: Apply Policies to Machine
-    include_tasks: '{{ item.policy_name }}.yml'
-    loop: "{{ policies.list}}"
-
-  
-
-  #- name: Execute Policy Playbooks to reconfigure the VM 
+  - name: Apply Policy Documents to Machine
+    include_tasks: 
+      file: './policyModules/{{ item.policy_name }}/main.yml'
+    loop: "{{ policies.list }}"

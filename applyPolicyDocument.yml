@@ -3,7 +3,7 @@
   hosts: all
   become: true
   tasks: 
-  - name: Check for Existing System Policy Definition
+  - name: Check for Existing System Policy Document
     ansible.builtin.stat:
       path: /policy.csv
     register: policy_stat_result
@@ -16,6 +16,6 @@
   - name: Ensure Server is Under Management
     ansible.builtin.lineinfile:
       path: /policy.csv
-      line: "policy_name,\npolicy-config-baseline,\npolicy-firewall-sealed"
+      line: "policy_name,\npolicy-config-baseline,\npolicy-firewall-sshonly"
       create: yes
     when: policy_stat_result.stat.islnk is not defined

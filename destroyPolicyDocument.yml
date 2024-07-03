@@ -1,0 +1,9 @@
+---
+- name: REMOVE SERVER FROM MANAGEMENT
+  become: true
+  hosts: all
+  tasks: 
+    - name: Remove Policy Document
+      ansible.builtin.file: 
+        path: /policy.csv
+        state: absent

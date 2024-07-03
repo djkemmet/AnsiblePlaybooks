@@ -1,8 +1,0 @@
----
-- name: POLICY - FIREWALL, SEALED
-  hosts: all
-  become: true
-  tasks:
-    - name: Write a debug message
-      ansible.builtin.debug:
-        msg: "Hello, this is a debug message!"
