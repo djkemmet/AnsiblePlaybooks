@@ -1,0 +1,11 @@
+---
+- name: Path System
+  become: true
+  hosts: all
+  tasks:
+    - name: Patch System
+      ansible.builtin.dnf:
+        name: '*'
+        state: latest
+    - name: Restart System
+      ansible.builtin.reboot:
