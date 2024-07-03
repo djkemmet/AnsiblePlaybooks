@@ -20,6 +20,16 @@
     name: vmadmin
     append: true
     groups: host
+- name: Install Cockpit
+  ansible.builtin.dnf: 
+    name: cockpit
+    state: present
+- name: Enable Cockpit Service
+  ansible.builtin.systemd_service:
+    name: cockpit.socket
+    enabled: true
+    state: started
+
 - name: RESTART SERVER TO CATCH CHANGES
   ansible.builtin.reboot:
 
