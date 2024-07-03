@@ -1,0 +1,40 @@
+#!/usr/bin/python3
+"""
+Simplified Ansible Management Utility
+"""
+
+# Imports
+import click
+
+# Application Route
+@click.group()
+def cli():
+    """ automun - Simplifies Ansible management with module plugin concept, 
+    import/export of modules, and consolidate commands for simplified management.
+    """
+
+# CREATE COMMAND: Export a Policy Module Template
+@click.command("ExportPolicyTemplate")
+#@click.option('--ExportModuleTemplate',help="Provides Policy Module Template ready for use.")
+def export_policy_module_template():
+    """
+    Exports ready-to-build policy module template, with example syntax
+    """
+    print("This is the Export Policy Function")
+
+# Import a Policy Module Template, Confirm
+@click.command("ImportPolicyModule")
+#@click.option('--ImportPolicyModule', help="Provides Policy Module Template ready for use.")
+def import_policy_module():
+    """
+    Imports Policy Module for application to managed systems.
+    """
+    print("This command Imports a policy module")
+# Create Code to open these YML Files as objects.
+
+
+cli.add_command(export_policy_module_template)
+cli.add_command(import_policy_module)
+
+if __name__ == '__main__':
+    cli()
